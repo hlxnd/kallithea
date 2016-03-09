@@ -6,6 +6,7 @@ RUN apt-get -y install apache2 libapache2-mod-wsgi
 RUN virtualenv /opt/kallithea
 ENV PATH=/opt/kallithea/bin:$PATH
 ENV VIRTUAL_ENV=/opt/kallithea
+RUN pip install --upgrade pip setuptools
 RUN pip install kallithea
 RUN a2dissite 000-default
 
